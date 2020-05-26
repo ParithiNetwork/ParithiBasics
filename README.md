@@ -1,0 +1,29 @@
+# ParithiBasics
+
+[![CI Status](https://img.shields.io/travis/parithi/ParithiBasics.svg?style=flat)](https://travis-ci.org/parithi/ParithiBasics)
+[![Version](https://img.shields.io/cocoapods/v/ParithiBasics.svg?style=flat)](https://cocoapods.org/pods/ParithiBasics)
+[![License](https://img.shields.io/cocoapods/l/ParithiBasics.svg?style=flat)](https://cocoapods.org/pods/ParithiBasics)
+[![Platform](https://img.shields.io/cocoapods/p/ParithiBasics.svg?style=flat)](https://cocoapods.org/pods/ParithiBasics)
+
+## Example
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+## Requirements
+
+## Installation
+
+ParithiBasics is available through [CocoaPods](https://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod 'ParithiBasics'
+```
+
+## Author
+
+parithi, mail@parithi.com
+
+## License
+
+ParithiBasics is available under the MIT license. See the LICENSE file for more info.

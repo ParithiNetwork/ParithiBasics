@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ParithiBasics_Example' do
+  pod 'ParithiBasics', :path => '../'
+
+  target 'ParithiBasics_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
