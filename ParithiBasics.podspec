@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'ParithiBasics/Classes/**/*'
+  s.source_files = 'Classes/**/*'
   s.swift_version = '5.0'
   
   s.platforms = {
