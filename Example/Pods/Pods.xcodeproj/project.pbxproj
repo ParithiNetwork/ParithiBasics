@@ -11,7 +11,7 @@
 		1EB13163ADB91A4C3F63BB8E8C147FAC /* ParithiBasics-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 634BEBF2CAB446E87D7E4E59133F3E30 /* ParithiBasics-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		21CCFE316CDE762E6F70DA5808BDD491 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		43403AA8752C1E0744668CED463C1498 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		9682CA38F6757144102C4D7C33CF58A0 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E3C69FF31227D8F1ABC4895A6B5AB /* ReplaceMe.swift */; };
+		728F104F247CA3A300639D9B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728F104E247CA3A300639D9B /* Extensions.swift */; };
 		BC3537A6167C530B2659CE06B7F76F2C /* Pods-ParithiBasics_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D105331BE395B0A1378D1936AA5DA9 /* Pods-ParithiBasics_Example-dummy.m */; };
 		DA7544C118D3005E50C8E9465F7A1069 /* Pods-ParithiBasics_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C5DF0A4F0177713DFDEA01CDC6BAD10 /* Pods-ParithiBasics_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EDFDD74315F75FBEB44AB2FE99B119ED /* ParithiBasics-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E430E2BED926B9B6268592AB5A787CAD /* ParithiBasics-dummy.m */; };
@@ -42,22 +42,22 @@
 		270136BFCE6F70D8B647CD0A20B144F1 /* Pods-ParithiBasics_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ParithiBasics_Example-Info.plist"; sourceTree = "<group>"; };
 		2E722AF3ED0141D8F2E1DFA6B76AB575 /* ParithiBasics-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ParithiBasics-Info.plist"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		33A8EBC11ADD5CD8820B1C731E4CBBB9 /* Pods_ParithiBasics_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ParithiBasics_Example.framework; path = "Pods-ParithiBasics_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		33A8EBC11ADD5CD8820B1C731E4CBBB9 /* Pods_ParithiBasics_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParithiBasics_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3985ACB548BC93AAE8E16DE79DAABA68 /* Pods-ParithiBasics_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ParithiBasics_Tests-dummy.m"; sourceTree = "<group>"; };
-		4F0E3C69FF31227D8F1ABC4895A6B5AB /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = ParithiBasics/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
 		5C5DF0A4F0177713DFDEA01CDC6BAD10 /* Pods-ParithiBasics_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ParithiBasics_Example-umbrella.h"; sourceTree = "<group>"; };
 		5DCE6CA4C99F9DB3427088EF6DB55771 /* ParithiBasics.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ParithiBasics.modulemap; sourceTree = "<group>"; };
 		5FED464AE228653CF20966D4382AAD0E /* ParithiBasics-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ParithiBasics-prefix.pch"; sourceTree = "<group>"; };
-		619FE32F6ED37DEC37179B3C5DF26B2B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		619FE32F6ED37DEC37179B3C5DF26B2B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		634BEBF2CAB446E87D7E4E59133F3E30 /* ParithiBasics-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ParithiBasics-umbrella.h"; sourceTree = "<group>"; };
 		646C8C0F50C4CDC2FA0B1A66A7C82222 /* Pods-ParithiBasics_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ParithiBasics_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		65DB8DCBBFB5722184A795BE3209BDAF /* Pods_ParithiBasics_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ParithiBasics_Tests.framework; path = "Pods-ParithiBasics_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		65DB8DCBBFB5722184A795BE3209BDAF /* Pods_ParithiBasics_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParithiBasics_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		728F104E247CA3A300639D9B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8D3577041AC7005D7DC60E1A5A3AB5F0 /* Pods-ParithiBasics_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ParithiBasics_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		8E4AF04C5069DA18D41B73E35C44B897 /* Pods-ParithiBasics_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ParithiBasics_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		9AEDD479DE0A19B98E32AE8822DE908A /* Pods-ParithiBasics_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ParithiBasics_Tests.modulemap"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A09C26EF6272363A8AFD0EBEA4FB576C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		A0B7B27C9CA755AE267FDEAD9D668F40 /* ParithiBasics.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ParithiBasics.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A09C26EF6272363A8AFD0EBEA4FB576C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A0B7B27C9CA755AE267FDEAD9D668F40 /* ParithiBasics.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = ParithiBasics.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AD7487858736ABD47014F20F238D5062 /* Pods-ParithiBasics_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ParithiBasics_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		AF34162F4F4AFFE069EFE181A02B9CC3 /* Pods-ParithiBasics_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ParithiBasics_Example.modulemap"; sourceTree = "<group>"; };
 		B15D90DDB02A2ED7735F7BDA8240E582 /* Pods-ParithiBasics_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ParithiBasics_Tests-Info.plist"; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 		D68F8AFF9146E972111CE67C70539236 /* Pods-ParithiBasics_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ParithiBasics_Example.release.xcconfig"; sourceTree = "<group>"; };
 		D6AD6408E54B79E7EDA9BA5224691A69 /* ParithiBasics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ParithiBasics.debug.xcconfig; sourceTree = "<group>"; };
 		E430E2BED926B9B6268592AB5A787CAD /* ParithiBasics-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ParithiBasics-dummy.m"; sourceTree = "<group>"; };
-		EA90D1777F90CE4D930FB5D1D805D9DF /* ParithiBasics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ParithiBasics.framework; path = ParithiBasics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA90D1777F90CE4D930FB5D1D805D9DF /* ParithiBasics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ParithiBasics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF0E7D8E9C4D1F1911344657C9970E6B /* ParithiBasics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ParithiBasics.release.xcconfig; sourceTree = "<group>"; };
 		F4D105331BE395B0A1378D1936AA5DA9 /* Pods-ParithiBasics_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ParithiBasics_Example-dummy.m"; sourceTree = "<group>"; };
 		FC5D3C3D72E25D504176BABE09CBEB02 /* Pods-ParithiBasics_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ParithiBasics_Example-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -135,6 +135,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		728F104D247CA38500639D9B /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				728F104E247CA3A300639D9B /* Extensions.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		7A142914EA45F49006527A6F1F5ED6CE /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,7 +206,7 @@
 		E3169E0EA3923A21A38B50998E1245A4 /* ParithiBasics */ = {
 			isa = PBXGroup;
 			children = (
-				4F0E3C69FF31227D8F1ABC4895A6B5AB /* ReplaceMe.swift */,
+				728F104D247CA38500639D9B /* Source */,
 				C4ABE90322E3E98DE1E59946D8415DD7 /* Pod */,
 				95E51623F26EF6DAFE16B4FC8BD40E36 /* Support Files */,
 			);
@@ -317,6 +325,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1100;
+				TargetAttributes = {
+					EFDC24C62AF7B694412A96B3752F0EE2 = {
+						LastSwiftMigration = 1150;
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -368,7 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDFDD74315F75FBEB44AB2FE99B119ED /* ParithiBasics-dummy.m in Sources */,
-				9682CA38F6757144102C4D7C33CF58A0 /* ReplaceMe.swift in Sources */,
+				728F104F247CA3A300639D9B /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +491,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D6AD6408E54B79E7EDA9BA5224691A69 /* ParithiBasics.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -493,11 +507,13 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/ParithiBasics/ParithiBasics.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = com.parithi.basics;
 				PRODUCT_MODULE_NAME = ParithiBasics;
 				PRODUCT_NAME = ParithiBasics;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -624,8 +640,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -699,6 +714,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EF0E7D8E9C4D1F1911344657C9970E6B /* ParithiBasics.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -714,6 +730,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/ParithiBasics/ParithiBasics.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = com.parithi.basics;
 				PRODUCT_MODULE_NAME = ParithiBasics;
 				PRODUCT_NAME = ParithiBasics;
 				SDKROOT = iphoneos;
