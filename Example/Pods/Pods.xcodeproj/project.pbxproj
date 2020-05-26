@@ -135,12 +135,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		728F104D247CA38500639D9B /* Source */ = {
+		728F104D247CA38500639D9B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				728F104E247CA3A300639D9B /* Extensions.swift */,
 			);
-			path = Source;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		7A142914EA45F49006527A6F1F5ED6CE /* Development Pods */ = {
@@ -206,7 +206,7 @@
 		E3169E0EA3923A21A38B50998E1245A4 /* ParithiBasics */ = {
 			isa = PBXGroup;
 			children = (
-				728F104D247CA38500639D9B /* Source */,
+				728F104D247CA38500639D9B /* Classes */,
 				C4ABE90322E3E98DE1E59946D8415DD7 /* Pod */,
 				95E51623F26EF6DAFE16B4FC8BD40E36 /* Support Files */,
 			);
