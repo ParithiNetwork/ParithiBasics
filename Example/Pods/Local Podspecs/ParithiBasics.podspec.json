@@ -1,0 +1,22 @@
+{
+  "name": "ParithiBasics",
+  "version": "0.1.0",
+  "summary": "A short description of ParithiBasics.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/parithi/ParithiBasics",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "parithi": "mail@parithi.com"
+  },
+  "source": {
+    "git": "https://github.com/parithi/ParithiBasics.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "ParithiBasics/Classes/**/*"
+}

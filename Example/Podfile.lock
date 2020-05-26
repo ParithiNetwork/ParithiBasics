@@ -1,0 +1,16 @@
+PODS:
+  - ParithiBasics (0.1.0)
+
+DEPENDENCIES:
+  - ParithiBasics (from `../`)
+
+EXTERNAL SOURCES:
+  ParithiBasics:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ParithiBasics: 68380d1159adb7106cea456c80b6bc114d8eac28
+
+PODFILE CHECKSUM: 7ce59f5696419e0af09a5fe0522cb1601b1b3400
+
+COCOAPODS: 1.9.2

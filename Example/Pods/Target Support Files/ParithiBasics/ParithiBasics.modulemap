@@ -1,0 +1,6 @@
+framework module ParithiBasics {
+  umbrella header "ParithiBasics-umbrella.h"
+
+  export *
+  module * { export * }
+}
