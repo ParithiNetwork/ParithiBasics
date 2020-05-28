@@ -38,7 +38,7 @@ class StringUtils {
 
 extension String {
     
-    func getFileName() -> String? {
+    public func getFileName() -> String? {
         let lastCompontent = (self as NSString).lastPathComponent as String
         let parts = lastCompontent.components(separatedBy: ".")
         if (parts.count > 0) {
@@ -47,11 +47,11 @@ extension String {
         return nil
     }
 
-    func isNumeric() -> Bool {
+    public func isNumeric() -> Bool {
         return NumberFormatter().number(from: self) != nil
     }
 
-    func convertToDate(formatString : String? = nil) -> Date? {
+    public func convertToDate(formatString : String? = nil) -> Date? {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
         if (formatString != nil) {
@@ -62,7 +62,7 @@ extension String {
         return formatter.date(from: self)
     }
     
-    func capitalizingFirstLetter() -> String {
+    public func capitalizingFirstLetter() -> String {
         return prefix(1).capitalized + dropFirst()
     }
     
@@ -83,7 +83,7 @@ extension String {
 }
 
 extension Date {
-    func convertToString() -> String? {
+    public func convertToString() -> String? {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSSXXXXX"
@@ -92,7 +92,7 @@ extension Date {
 }
     
 extension Double {
-    func truncate(places: Int) -> Double {
+    public func truncate(places: Int) -> Double {
         return Double(floor(pow(10.0, Double(places)) * self)/pow(10.0, Double(places)))
     }
 }
@@ -149,11 +149,11 @@ extension Data {
 // Extensions for ViewControllers
 extension UIViewController {
     
-    func show() {
+    public func show() {
         self.view.show()
     }
     
-    func hide() {
+    public func hide() {
         self.view.hide()
     }
     
@@ -167,7 +167,7 @@ extension UIViewController {
 }
 
 extension UILabel {
-    func setTextWithShadow(_ string: String) {
+    public func setTextWithShadow(_ string: String) {
         
         let shadow = NSShadow()
         shadow.shadowBlurRadius = 5
@@ -183,7 +183,7 @@ extension UILabel {
 
 extension UILabel {
     
-    func semiBoldWith(fontSize : CGFloat) {
+    public func semiBoldWith(fontSize : CGFloat) {
         self.font = UIFont(name: "Gibson-SemiBold",size: fontSize)
     }
     
@@ -191,7 +191,7 @@ extension UILabel {
 
 extension UIButton {
     
-    func semiBoldWith(fontSize : CGFloat) {
+    public func semiBoldWith(fontSize : CGFloat) {
         if let font = UIFont(name: "Gibson-SemiBold",size: fontSize) {
             self.titleLabel?.font = font
         }
@@ -201,12 +201,12 @@ extension UIButton {
 
 extension UIView {
     
-    func addConstraintReadySubView(_ view : UIView) {
+    public func addConstraintReadySubView(_ view : UIView) {
         self.addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    func addConstraintsWithFormat(format : String, views : UIView...) {
+    public func addConstraintsWithFormat(format : String, views : UIView...) {
         var viewsDictionary = [String : UIView]()
         for (index, view) in views.enumerated() {
             let key = "v\(index)"
@@ -237,7 +237,7 @@ extension UIView {
         self.translatesAutoresizingMaskIntoConstraints = true
     }
     
-    func shakeLight() {
+    public func shakeLight() {
         let animation = CABasicAnimation(keyPath: "position")
         animation.duration = 0.07
         animation.repeatCount = 3
@@ -247,14 +247,14 @@ extension UIView {
         self.layer.add(animation, forKey: "position")
     }
     
-    func fadeIn(duration: TimeInterval = 0.3, completionDelegate: AnyObject? = nil) {
+    public func fadeIn(duration: TimeInterval = 0.3, completionDelegate: AnyObject? = nil) {
         self.show()
         UIView.animate(withDuration: duration, animations: {
             self.alpha = 1.0
         })
     }
     
-    func fadeOut(duration: TimeInterval = 0.3, completionDelegate: @escaping (_ result: Bool) -> Void) {
+    public func fadeOut(duration: TimeInterval = 0.3, completionDelegate: @escaping (_ result: Bool) -> Void) {
         UIView.animate(withDuration: duration, animations: {
             self.alpha = 0.0
         }) { _ in
@@ -262,41 +262,41 @@ extension UIView {
         }
     }
     
-    func hide(completionDelegate : AnyObject? = nil){
+    public func hide(completionDelegate : AnyObject? = nil){
         self.isHidden = true
     }
     
-    func show(completionDelegate : AnyObject? = nil){
+    public func show(completionDelegate : AnyObject? = nil){
         self.isHidden = false
     }
     
-    func makeRounded() {
+    public func makeRounded() {
         self.makeRounded(radius: self.frame.height/2)
     }
     
-    func addBorder(borderColor : UIColor, borderWidth : CGFloat) {
+    public func addBorder(borderColor : UIColor, borderWidth : CGFloat) {
         self.layer.borderColor = borderColor.cgColor
         self.layer.borderWidth = borderWidth
     }
     
-    func removeBorder(){
+    public func removeBorder(){
         self.layer.borderColor = UIColor.clear.cgColor
         self.layer.borderWidth = 0
     }
     
-    func roundCornerByRect(corners: UIRectCorner, radius: CGFloat) {
+    public func roundCornerByRect(corners: UIRectCorner, radius: CGFloat) {
         let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let mask = CAShapeLayer()
         mask.path = path.cgPath
         layer.mask = mask
     }
     
-    func makeRounded(radius : CGFloat) {
+    public func makeRounded(radius : CGFloat) {
         self.layer.cornerRadius = radius
         self.layer.masksToBounds = true
     }
     
-    func addShadowWithRadius(cornerRadius : CGFloat, shadowColor : UIColor = UIColor.darkGray, shadowOpacity : Float = 0.5, shadowOffsetX : Int = 0, shadowOffsetY : Int = 0, shadowRadius : CGFloat = 5, scale: Bool = true, usePlainShadow : Bool = true){
+    public func addShadowWithRadius(cornerRadius : CGFloat, shadowColor : UIColor = UIColor.darkGray, shadowOpacity : Float = 0.5, shadowOffsetX : Int = 0, shadowOffsetY : Int = 0, shadowRadius : CGFloat = 5, scale: Bool = true, usePlainShadow : Bool = true){
         
         makeRounded(radius: cornerRadius)
         
@@ -314,7 +314,7 @@ extension UIView {
         self.layer.masksToBounds = false
     }
     
-    func startShimmer(repeatAnimation : Bool = true) {
+    public func startShimmer(repeatAnimation : Bool = true) {
         stopShimmer()
         self.clipsToBounds = true
         let gradientLayer = CAGradientLayer()
@@ -337,17 +337,17 @@ extension UIView {
         gradientLayer.add(animation, forKey: "")
     }
     
-    func stopShimmer() {
+    public func stopShimmer() {
         self.layer.removeAllAnimations()
         self.layer.mask = nil
     }
     
-    func removeShadow(){
+    public func removeShadow(){
         self.layer.shadowPath = nil
         self.layer.shadowOpacity = 0.0
     }
     
-    func dropShadow(scale: Bool = true) {
+    public func dropShadow(scale: Bool = true) {
         layer.masksToBounds = false
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 1.0
@@ -355,7 +355,7 @@ extension UIView {
         layer.shadowRadius = 1
     }
     
-    func glow() {
+    public func glow() {
         if let bgColor = self.backgroundColor {
             self.layer.shadowColor = bgColor.cgColor
             self.layer.shadowOpacity = 0.5
@@ -365,11 +365,11 @@ extension UIView {
         }
     }
     
-    func applyGradient(colors: [UIColor]) -> Void {
+    public func applyGradient(colors: [UIColor]) -> Void {
         self.applyGradient(colors: colors, locations: nil)
     }
     
-    func applyGradient(colors: [UIColor], locations: [NSNumber]?) -> Void {
+    public func applyGradient(colors: [UIColor], locations: [NSNumber]?) -> Void {
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = self.bounds
         gradient.colors = colors.map { $0.cgColor }
@@ -382,13 +382,13 @@ extension UIView {
 }
 
 extension StringProtocol { // for Swift 4.x syntax you will needed also to constrain the collection Index to String Index - `extension StringProtocol where Index == String.Index`
-    func index(of string: Self, options: String.CompareOptions = []) -> Index? {
+    public func index(of string: Self, options: String.CompareOptions = []) -> Index? {
         return range(of: string, options: options)?.lowerBound
     }
-    func endIndex(of string: Self, options: String.CompareOptions = []) -> Index? {
+    public func endIndex(of string: Self, options: String.CompareOptions = []) -> Index? {
         return range(of: string, options: options)?.upperBound
     }
-    func indexes(of string: Self, options: String.CompareOptions = []) -> [Index] {
+    public func indexes(of string: Self, options: String.CompareOptions = []) -> [Index] {
         var result: [Index] = []
         var startIndex = self.startIndex
         while startIndex < endIndex,
@@ -399,7 +399,7 @@ extension StringProtocol { // for Swift 4.x syntax you will needed also to const
         }
         return result
     }
-    func ranges(of string: Self, options: String.CompareOptions = []) -> [Range<Index>] {
+    public func ranges(of string: Self, options: String.CompareOptions = []) -> [Range<Index>] {
         var result: [Range<Index>] = []
         var startIndex = self.startIndex
         while startIndex < endIndex,
@@ -576,7 +576,7 @@ extension CGFloat {
 }
 
 extension Date {
-    func timeAgoDisplay() -> String {
+    public func timeAgoDisplay() -> String {
         
         let calendar = Calendar.current
         let minuteAgo = calendar.date(byAdding: .minute, value: -1, to: Date())!
@@ -615,7 +615,7 @@ extension Date {
 }
 
 extension String {
-    func getYoutubeId() -> String? {
+    public func getYoutubeId() -> String? {
         return URLComponents(string: self)?.queryItems?.first(where: { $0.name == "v" })?.value
     }
 }
@@ -705,14 +705,14 @@ extension UITextField: UITextFieldXIBLocalizable {
 
 extension UIPageViewController {
     
-    func goToNextPage(){
+    public func goToNextPage(){
         guard let currentViewController = self.viewControllers?.first else { return }
         guard let nextViewController = dataSource?.pageViewController( self, viewControllerAfter: currentViewController ) else { return }
         setViewControllers([nextViewController], direction: .forward, animated: false, completion: nil)
     }
     
     
-    func goToPreviousPage(){
+    public func goToPreviousPage(){
         guard let currentViewController = self.viewControllers?.first else { return }
         guard let previousViewController = dataSource?.pageViewController( self, viewControllerBefore: currentViewController ) else { return }
         setViewControllers([previousViewController], direction: .reverse, animated: false, completion: nil)
@@ -745,7 +745,7 @@ extension Array {
 }
 
 extension UIViewController {
-    func showAsAlert(string : String) {
+    public func showAsAlert(string : String) {
         #if DEBUG
         let alert = UIAlertController(title: "DEBUG", message: string, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
@@ -763,7 +763,7 @@ enum AppStoryboard : String {
         return UIStoryboard(name: self.rawValue, bundle: Bundle.main)
     }
     
-    func viewController<T : UIViewController>(viewControllerClass : T.Type) -> T {
+    public func viewController<T : UIViewController>(viewControllerClass : T.Type) -> T {
         let storyboardID = (viewControllerClass as UIViewController.Type).storyboardID
         guard let scene = instance.instantiateViewController(withIdentifier: storyboardID) as? T else {
             fatalError("ViewController with identifier \(storyboardID), not found in \(self.rawValue) Storyboard")
@@ -771,7 +771,7 @@ enum AppStoryboard : String {
         return scene
     }
     
-    func initialViewController() -> UIViewController? {
+    public func initialViewController() -> UIViewController? {
         return instance.instantiateInitialViewController()
     }
 }
