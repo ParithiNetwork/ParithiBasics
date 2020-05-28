@@ -4,7 +4,7 @@ let SOUNDCLOUD_FORMAT = "yyyy-MM-dd HH:mm:ss Z"
 
 public class StringUtils {
     
-    static func formatToShortNum(n: Double) ->String{
+    public static func formatToShortNum(n: Double) ->String{
         let num = abs(Double(n))
         let sign = (n < 0) ? "-" : ""
         
@@ -157,11 +157,11 @@ extension UIViewController {
         self.view.hide()
     }
     
-    class var storyboardID : String {
+    public class var storyboardID : String {
         return "\(self)"
     }
     
-    static func instantiate(fromAppStoryboard appStoryboard: AppStoryboard) -> Self {
+    public static func instantiate(fromAppStoryboard appStoryboard: AppStoryboard) -> Self {
         return appStoryboard.viewController(viewControllerClass: self)
     }
 }
@@ -411,7 +411,7 @@ extension StringProtocol { // for Swift 4.x syntax you will needed also to const
         return result
     }
     
-    static func randomEmoji(forIndex : Int) -> String {
+    public static func randomEmoji(forIndex : Int) -> String {
         let availableEmojis = ["😀","😃","😄","😁","😆","🤣",
                                "😂","😉","😇","🥰","🥰","🥰",
                                "🤑","🤪","😜","🥶","🤮","🤯",
@@ -423,7 +423,7 @@ extension StringProtocol { // for Swift 4.x syntax you will needed also to const
 }
 
 extension UIFont {
-    static func semibold(size : CGFloat) -> UIFont {
+    public static func semibold(size : CGFloat) -> UIFont {
         return UIFont (name: "Gibson-SemiBold", size: size)!
     }
 }
@@ -437,35 +437,35 @@ extension UIButton {
     
     public func convertToEditButton() {
         self.setTitle(NSLocalizedString("settings_edit", comment: ""), for: .normal)
-        self.backgroundColor = UIColor.EyesColor.Button.settingsPurple
+        self.backgroundColor = UIColor.PrimeColor.Button.settingsPurple
         self.setTitleColor(.white, for: .normal)
         self.layer.borderWidth = 0
     }
     
     public func convertToSaveButton() {
         self.setTitle(NSLocalizedString("settings_save", comment: ""), for: .normal)
-        self.backgroundColor = UIColor.EyesColor.Button.enabledBackground
-        self.setTitleColor(UIColor.EyesColor.Button.enabledText, for: .normal)
+        self.backgroundColor = UIColor.PrimeColor.Button.enabledBackground
+        self.setTitleColor(UIColor.PrimeColor.Button.enabledText, for: .normal)
         self.layer.borderWidth = 0
     }
     
     public func convertToProfileButton() {
         self.setTitle(NSLocalizedString("common_profile_button", comment: ""), for: .normal)
-        self.backgroundColor = UIColor.EyesColor.Button.enabledBackground
-        self.setTitleColor(UIColor.EyesColor.Button.enabledText, for: .normal)
+        self.backgroundColor = UIColor.PrimeColor.Button.enabledBackground
+        self.setTitleColor(UIColor.PrimeColor.Button.enabledText, for: .normal)
         self.layer.borderWidth = 0
     }
     
     public func convertToAddButton() {
         self.setTitle(NSLocalizedString("common_add_button", comment: ""), for: .normal)
-        self.backgroundColor = UIColor.EyesColor.Button.disabledBackground
-        self.setTitleColor(UIColor.EyesColor.Button.disabledText, for: .normal)
+        self.backgroundColor = UIColor.PrimeColor.Button.disabledBackground
+        self.setTitleColor(UIColor.PrimeColor.Button.disabledText, for: .normal)
         self.layer.borderWidth = 0
     }
     
     public func lookDeactivated() {
-        self.backgroundColor = UIColor.EyesColor.Button.disabledBackground
-        self.setTitleColor(UIColor.EyesColor.Button.disabledText, for: .normal)
+        self.backgroundColor = UIColor.PrimeColor.Button.disabledBackground
+        self.setTitleColor(UIColor.PrimeColor.Button.disabledText, for: .normal)
         self.layer.borderWidth = 0
     }
     
@@ -473,16 +473,16 @@ extension UIButton {
         self.setTitle(NSLocalizedString("common_unmask_button", comment: ""), for: .normal)
         self.backgroundColor = .clear
         self.layer.borderWidth = 2
-        self.layer.borderColor = UIColor.EyesColor.Button.unmaskBorder.cgColor
-        self.setTitleColor(UIColor.EyesColor.Button.unmaskText, for: .normal)
+        self.layer.borderColor = UIColor.PrimeColor.Button.unmaskBorder.cgColor
+        self.setTitleColor(UIColor.PrimeColor.Button.unmaskText, for: .normal)
     }
     
     public func convertToTooLateButton() {
         self.setTitle(NSLocalizedString("common_too_late_button", comment: ""), for: .normal)
         self.backgroundColor = .clear
         self.layer.borderWidth = 2
-        self.layer.borderColor = UIColor.EyesColor.Button.tooLateBorder.cgColor
-        self.setTitleColor(UIColor.EyesColor.Button.tooLateText, for: .normal)
+        self.layer.borderColor = UIColor.PrimeColor.Button.tooLateBorder.cgColor
+        self.setTitleColor(UIColor.PrimeColor.Button.tooLateText, for: .normal)
     }
     
     public func convertToUnlockButton() {
@@ -509,7 +509,7 @@ extension UIColor {
         )
     }
     
-    static func random() -> UIColor {
+    public static func random() -> UIColor {
         return UIColor(red:   .random(),
                        green: .random(),
                        blue:  .random(),
@@ -518,7 +518,7 @@ extension UIColor {
     
     
     
-    struct EyesColor {
+    struct PrimeColor {
         static let Grey = UIColor(rgb: 0xefefef)
         struct Primary {
             static let Red = UIColor(rgb: 0xff005f)
@@ -548,29 +548,29 @@ extension UIColor {
         }
     }
     
-    static func eyesColor(forIndex : Int, usePrimary : Bool = false) -> UIColor {
+    public static func primeColor(forIndex : Int, usePrimary : Bool = false) -> UIColor {
         let denom = (usePrimary) ? 4 : 8
         switch (abs(forIndex%denom)) {
         case 1 :
-            return UIColor.EyesColor.Primary.Blue
+            return UIColor.PrimeColor.Primary.Blue
         case 2:
-            return UIColor.EyesColor.Primary.Purple
+            return UIColor.PrimeColor.Primary.Purple
         case 3 :
-            return UIColor.EyesColor.Primary.Yellow
+            return UIColor.PrimeColor.Primary.Yellow
         case 5 :
-            return UIColor.EyesColor.Secondary.Orange
+            return UIColor.PrimeColor.Secondary.Orange
         case 6 :
-            return UIColor.EyesColor.Secondary.Pink
+            return UIColor.PrimeColor.Secondary.Pink
         case 7 :
-            return UIColor.EyesColor.Secondary.Indigo
+            return UIColor.PrimeColor.Secondary.Indigo
         default:
-            return UIColor.EyesColor.Primary.Red
+            return UIColor.PrimeColor.Primary.Red
         }
     }
 }
 
 extension CGFloat {
-    static func random() -> CGFloat {
+    public static func random() -> CGFloat {
         return CGFloat(arc4random()) / CGFloat(UInt32.max)
     }
 }
