@@ -2,7 +2,7 @@
 let TWITTER_DATE_FORMAT = "EEE MMM dd HH:mm:ss Z yyyy"
 let SOUNDCLOUD_FORMAT = "yyyy-MM-dd HH:mm:ss Z"
 
-class StringUtils {
+public class StringUtils {
     
     static func formatToShortNum(n: Double) ->String{
         let num = abs(Double(n))
@@ -755,7 +755,7 @@ extension UIViewController {
 }
 
 
-enum AppStoryboard : String {
+public enum AppStoryboard : String {
     
     case Main
     
