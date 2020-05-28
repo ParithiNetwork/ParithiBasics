@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "ParithiBasics_Example.app"
+               BuildableName = "ParithiBasics Example.app"
                BlueprintName = "ParithiBasics_Example"
                ReferencedContainer = "container:ParithiBasics.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "ParithiBasics_Example.app"
+            BuildableName = "ParithiBasics Example.app"
             BlueprintName = "ParithiBasics_Example"
             ReferencedContainer = "container:ParithiBasics.xcodeproj">
          </BuildableReference>
@@ -78,7 +78,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "ParithiBasics_Example.app"
+            BuildableName = "ParithiBasics Example.app"
             BlueprintName = "ParithiBasics_Example"
             ReferencedContainer = "container:ParithiBasics.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "ParithiBasics_Example.app"
+            BuildableName = "ParithiBasics Example.app"
             BlueprintName = "ParithiBasics_Example"
             ReferencedContainer = "container:ParithiBasics.xcodeproj">
          </BuildableReference>
