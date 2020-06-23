@@ -799,3 +799,35 @@ public enum AppStoryboard : String {
         return instance.instantiateInitialViewController()
     }
 }
+
+extension UILabel {
+    
+    public func roundedFont(fontSize : CGFloat? = nil, weight : UIFont.Weight? = nil) {
+        let fontSize = fontSize ?? self.font.pointSize
+        let systemFont = UIFont.systemFont(ofSize: fontSize, weight: weight ?? .regular)
+        if #available(iOS 13.0, *) {
+            if let descriptor = systemFont.fontDescriptor.withDesign(.rounded) {
+                self.font = UIFont(descriptor: descriptor, size: fontSize)
+            }
+        }
+    }
+    
+}
+
+extension UIButton {
+    
+    public func addTouchAction(to action: Selector, viewController : UIViewController) {
+        self.addTarget(viewController, action: action, for: .touchUpInside)
+    }
+    
+}
+
+extension UIViewController {
+    
+    public func setAsRootVC(to window: UIWindow?) {
+        guard let window = window else { return }
+        window.rootViewController = self
+        window.makeKeyAndVisible()
+    }
+    
+}
