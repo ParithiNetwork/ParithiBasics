@@ -201,20 +201,6 @@ extension UIButton {
 
 extension UIView {
     
-    public func addConstraintReadySubView(_ view : UIView) {
-        self.addSubview(view)
-        view.translatesAutoresizingMaskIntoConstraints = false
-    }
-    
-    public func addConstraintsWithFormat(format : String, views : UIView...) {
-        var viewsDictionary = [String : UIView]()
-        for (index, view) in views.enumerated() {
-            let key = "v\(index)"
-            viewsDictionary[key] = view
-        }
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: viewsDictionary))
-    }
-    
     public func removeAllConstraints() {
         var _superview = self.superview
 
@@ -237,7 +223,7 @@ extension UIView {
         self.translatesAutoresizingMaskIntoConstraints = true
     }
     
-    public func shakeLight() {
+    func shake() {
         let animation = CABasicAnimation(keyPath: "position")
         animation.duration = 0.07
         animation.repeatCount = 3
@@ -245,6 +231,76 @@ extension UIView {
         animation.fromValue = NSValue(cgPoint: CGPoint(x: self.center.x - 10, y: self.center.y))
         animation.toValue = NSValue(cgPoint: CGPoint(x: self.center.x + 10, y: self.center.y))
         self.layer.add(animation, forKey: "position")
+    }
+    
+    func addBorder(width : CGFloat, color : UIColor) {
+        self.layer.borderWidth = width
+        self.layer.borderColor = color.cgColor
+    }
+    
+    public func hide(completionDelegate : AnyObject? = nil){
+        self.isHidden = true
+    }
+    
+    public func show(completionDelegate : AnyObject? = nil){
+        self.isHidden = false
+    }
+    
+    public func makeRounded(radius: CGFloat? = nil) {
+        let radius = radius ?? self.frame.height/2
+        self.layer.cornerRadius = radius
+        self.layer.masksToBounds = true
+    }
+    
+    public func addShadowWithRadius(cornerRadius : CGFloat? = nil, shadowColor : UIColor = UIColor.black, shadowOpacity : Float = 0.2, shadowOffsetX : Int = 0, shadowOffsetY : Int = 4, shadowRadius : CGFloat = 5, scale: Bool = true, usePlainShadow : Bool = true){
+        
+        let radius = cornerRadius ?? self.frame.height/2
+        
+        makeRounded(radius: radius)
+        
+        if(!usePlainShadow) {
+        self.layer.shadowPath =
+            UIBezierPath(roundedRect: self.bounds,
+                         cornerRadius: self.layer.cornerRadius).cgPath
+        }
+        self.layer.shadowColor = shadowColor.cgColor
+        self.layer.shadowOpacity = shadowOpacity
+        self.layer.shadowOffset = CGSize(width: shadowOffsetX, height: shadowOffsetY)
+        self.layer.shadowRadius = shadowRadius
+        self.layer.shouldRasterize = true
+        self.layer.rasterizationScale = scale ? UIScreen.main.scale : 1
+        self.layer.masksToBounds = false
+    }
+    
+    fileprivate struct AssociatedObjectKeys {
+        static var tapGestureRecognizer = "tapGestureRecognizer_Key"
+    }
+    
+    fileprivate typealias Action = (() -> Void)?
+    
+    fileprivate var tapGestureRecognizerAction: Action? {
+        set {
+            if let newValue = newValue {
+                objc_setAssociatedObject(self, &AssociatedObjectKeys.tapGestureRecognizer, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
+            }
+        }
+        get {
+            let tapGestureRecognizerActionInstance = objc_getAssociatedObject(self, &AssociatedObjectKeys.tapGestureRecognizer) as? Action
+            return tapGestureRecognizerActionInstance
+        }
+    }
+    
+    public func addTapGestureRecognizer(action: (() -> Void)?) {
+        self.isUserInteractionEnabled = true
+        self.tapGestureRecognizerAction = action
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture))
+        self.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc fileprivate func handleTapGesture(sender: UITapGestureRecognizer) {
+        if let action = self.tapGestureRecognizerAction {
+            action?()
+        }
     }
     
     public func fadeIn(duration: TimeInterval = 0.3, completionDelegate: AnyObject? = nil) {
@@ -262,18 +318,6 @@ extension UIView {
         }
     }
     
-    public func hide(completionDelegate : AnyObject? = nil){
-        self.isHidden = true
-    }
-    
-    public func show(completionDelegate : AnyObject? = nil){
-        self.isHidden = false
-    }
-    
-    public func makeRounded() {
-        self.makeRounded(radius: self.frame.height/2)
-    }
-    
     public func addBorder(borderColor : UIColor, borderWidth : CGFloat) {
         self.layer.borderColor = borderColor.cgColor
         self.layer.borderWidth = borderWidth
@@ -289,29 +333,6 @@ extension UIView {
         let mask = CAShapeLayer()
         mask.path = path.cgPath
         layer.mask = mask
-    }
-    
-    public func makeRounded(radius : CGFloat) {
-        self.layer.cornerRadius = radius
-        self.layer.masksToBounds = true
-    }
-    
-    public func addShadowWithRadius(cornerRadius : CGFloat, shadowColor : UIColor = UIColor.darkGray, shadowOpacity : Float = 0.5, shadowOffsetX : Int = 0, shadowOffsetY : Int = 0, shadowRadius : CGFloat = 5, scale: Bool = true, usePlainShadow : Bool = true){
-        
-        makeRounded(radius: cornerRadius)
-        
-        if(!usePlainShadow) {
-        self.layer.shadowPath =
-            UIBezierPath(roundedRect: self.bounds,
-                         cornerRadius: self.layer.cornerRadius).cgPath
-        }
-        self.layer.shadowColor = shadowColor.cgColor
-        self.layer.shadowOpacity = shadowOpacity
-        self.layer.shadowOffset = CGSize(width: shadowOffsetX, height: shadowOffsetY)
-        self.layer.shadowRadius = shadowRadius
-        self.layer.shouldRasterize = true
-        self.layer.rasterizationScale = scale ? UIScreen.main.scale : 1
-        self.layer.masksToBounds = false
     }
     
     public func startShimmer(repeatAnimation : Bool = true) {
@@ -381,13 +402,16 @@ extension UIView {
     
 }
 
-extension StringProtocol { // for Swift 4.x syntax you will needed also to constrain the collection Index to String Index - `extension StringProtocol where Index == String.Index`
+extension StringProtocol {
+    
     public func index(of string: Self, options: String.CompareOptions = []) -> Index? {
         return range(of: string, options: options)?.lowerBound
     }
+    
     public func endIndex(of string: Self, options: String.CompareOptions = []) -> Index? {
         return range(of: string, options: options)?.upperBound
     }
+    
     public func indexes(of string: Self, options: String.CompareOptions = []) -> [Index] {
         var result: [Index] = []
         var startIndex = self.startIndex
