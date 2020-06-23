@@ -802,13 +802,12 @@ public enum AppStoryboard : String {
 
 extension UILabel {
     
+    @available(iOS 13.0, *)
     public func roundedFont(fontSize : CGFloat? = nil, weight : UIFont.Weight? = nil) {
         let fontSize = fontSize ?? self.font.pointSize
         let systemFont = UIFont.systemFont(ofSize: fontSize, weight: weight ?? .regular)
-        if #available(iOS 13.0, *) {
-            if let descriptor = systemFont.fontDescriptor.withDesign(.rounded) {
-                self.font = UIFont(descriptor: descriptor, size: fontSize)
-            }
+        if let descriptor = systemFont.fontDescriptor.withDesign(.rounded) {
+            self.font = UIFont(descriptor: descriptor, size: fontSize)
         }
     }
     
